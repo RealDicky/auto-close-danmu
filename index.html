@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>close danmaku</title>
+  </head>
+  <body>
+    <script src="render.js"></script>
+    <style>
+      .switch {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100px;
+      }
+
+      .wrapper input {
+        display: none;
+      }
+      .wrapper label {
+        position: relative;
+        background: grey;
+        cursor: pointer;
+        width: 40px;
+        height: 20px;
+        border-radius: 100px;
+        display: block;
+      }
+      .wrapper label::before {
+        content: "";
+        position: absolute;
+        /*   display:block; */
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        background: white;
+        transition: all 0.36s;
+        top: 0px;
+        left: 0px;
+      }
+      .wrapper input:checked + label {
+        background: green;
+      }
+      .wrapper input:checked + label::before {
+        left: calc(100%);
+        transform: translateX(-100%);
+        transition: all 0.36s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+      }
+    </style>
+  </body>
+</html>
