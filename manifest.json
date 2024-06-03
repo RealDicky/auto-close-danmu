@@ -7,7 +7,7 @@
   "host_permissions":["<all_urls>"],
   "action": {
     "default_popup": "index.html",
-    "default_icon": "danmaku-off.png"
+    "default_icon": "danmu-off.png"
   },
   "content_scripts": [
     {

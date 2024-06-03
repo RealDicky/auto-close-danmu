@@ -1,8 +1,8 @@
 const switchFns = {
   bilibili: () => {
-    const danmakuEl = document.querySelector('.bui-danmaku-switch-input')
-    if (danmakuEl) {
-      danmakuEl.click()
+    const danmuEl = document.querySelector('.bui-danmu-switch-input')
+    if (danmuEl) {
+      danmuEl.click()
     }
   }
 }
@@ -10,8 +10,6 @@ const switchFns = {
 function init() {
   const initBilibili = () => {
     const isDisabled = document.querySelector('.bpx-player-dm-setting.disabled')
-
-    console.log({isDisabled});
     if (!isDisabled) {
       switchFns.bilibili()
     }
@@ -25,7 +23,6 @@ chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     const id = request.id
     if (!id) return
-    console.log({ id });
     if (id === 'init') {
       init()
     } else {

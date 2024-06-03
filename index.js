@@ -1,8 +1,8 @@
 const switchFns = {
   bilibili: () => {
-    const danmakuEl = document.querySelector('.bui-danmaku-switch-input')
-    if (danmakuEl) {
-      danmakuEl.click()
+    const danmuEl = document.querySelector('.bui-danmaku-switch-input')
+    if (danmuEl) {
+      danmuEl.click()
     }
   }
 }
@@ -25,7 +25,6 @@ chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     const id = request.id
     if (!id) return
-    console.log({ id });
     if (id === 'init') {
       init()
     } else {
